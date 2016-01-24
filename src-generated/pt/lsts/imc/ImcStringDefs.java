@@ -31,9 +31,9 @@ package pt.lsts.imc;
 
 public class ImcStringDefs {
 
-	public static final String IMC_SHA = "e82d9629e7cd6b213dd36b2b9b70c5822124104e";
-	public static final String IMC_BRANCH = "2015-10-13 e82d962 (HEAD, origin/master, origin/HEAD, master)";
-	public static final String IMC_COMMIT = "Ricardo Martins (rasm@oceanscan-mst.com), Tue Oct 13 19:09:26 WEST 2015, Fixing commit a0694c7ebbeb4c6bfb93a333ced08fcc032663a6, the fields were from LblBeacon.";
+	public static final String IMC_SHA = "18395b67cf91a248e77a344a57a05c012e341bb9";
+	public static final String IMC_BRANCH = "2015-10-16 18395b6 (HEAD, uavlab/feature/flir-serial, origin/feature/flir-serial, feature/flir-serial)";
+	public static final String IMC_COMMIT = "Elizabeth Roy (elizabeth.k.roy@gmail.com), Fri Oct 16 11:07:12 CEST 2015, IMC.xml: Added ThermalCamControl message description.";
 
 	public static java.util.Map<String, Integer> IMC_ADDRESSES = new java.util.LinkedHashMap<String, Integer>();
 
@@ -8340,6 +8340,37 @@ public class ImcStringDefs {
 		sb.append("      Request the destination system to send its parameters XML file via a\n");
 		sb.append("      :ref:`ParametersXml` message.\n");
 		sb.append("    </description>\n");
+		sb.append("  </message>\n");
+		sb.append("\n");
+		sb.append("  <message id=\"1991\" name=\"Thermal Camera Control\" abbrev=\"ThermalCamControl\">\n");
+		sb.append("    <description>\n");
+		sb.append("\t\t\tMessage containing the protocol for thermal camera control.   \n");
+		sb.append("    </description>\n");
+		sb.append("    <field name=\"Process code\" abbrev=\"processCode\" type=\"uint8_t\">\n");
+		sb.append("      <description>\n");
+		sb.append("      \tProcess code. 0x6E for all valid messages to/from thermal cam.\n");
+		sb.append("      </description>\n");
+		sb.append("    </field>\n");
+		sb.append("    <field name=\"Status\" abbrev=\"status\" type=\"uint8_t\">\n");
+		sb.append("      <description>\n");
+		sb.append("      \tThermal camera status.\n");
+		sb.append("      </description>\n");
+		sb.append("    </field>\n");
+		sb.append("    <field name=\"Function\" abbrev=\"function\" type=\"uint8_t\">\n");
+		sb.append("      <description>\n");
+		sb.append("        Function of command.\n");
+		sb.append("      </description>\n");
+		sb.append("    </field>\n");
+		sb.append("    <field name=\"Byte count\" abbrev=\"byteCount\" type=\"uint16_t\">\n");
+		sb.append("      <description>\n");
+		sb.append("        Byte count for command argument.\n");
+		sb.append("      </description>\n");
+		sb.append("    </field>\n");
+		sb.append("    <field name=\"Arguments\" abbrev=\"args\" type=\"rawdata\">\n");
+		sb.append("      <description>\n");
+		sb.append("        Byte vector of command arguments.\n");
+		sb.append("      </description>\n");
+		sb.append("    </field>\n");
 		sb.append("  </message>\n");
 		sb.append("\n");
 		sb.append("  <!-- BEGIN NECSAVE Messages -->\n");

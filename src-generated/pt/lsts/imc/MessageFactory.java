@@ -532,6 +532,8 @@ public class MessageFactory {
 				return new ParametersXml(defs);
 			case GetParametersXml.ID_STATIC:
 				return new GetParametersXml(defs);
+			case ThermalCamControl.ID_STATIC:
+				return new ThermalCamControl(defs);
 			case NecMsg.ID_STATIC:
 				return new NecMsg(defs);
 			case JsonObject.ID_STATIC:
